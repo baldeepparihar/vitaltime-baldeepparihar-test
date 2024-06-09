@@ -10,8 +10,10 @@ export default function App({ Component, pageProps }) {
     <DragDropContext onDragEnd={handleOnDragEnd}>
         <Droppable droppableId='boxes'>
         {(provided) => (
-            <Home ref={provided.innerRef} {...provided.droppableProps} provided={provided}/>
-            <Component {...pageProps} />
+            <div>
+                <Home ref={provided.innerRef} {...provided.droppableProps} provided={provided} />
+                <Component {...pageProps} />
+            </div>
         )}
             
         </Droppable>
