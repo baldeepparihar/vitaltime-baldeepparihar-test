@@ -1,4 +1,5 @@
 import Image from "next/image";
+                
 
 export default function Home() {
   return (
@@ -112,32 +113,71 @@ export default function Home() {
     
 
 
-    <main className="flex min-w-screen min-h-screen flex-col items-center justify-between p-24">
-      <div className="min-w-568px min-h-946px py-20 px-0 bg-customWhite">
-        <div className="flex justify-between">
-        <Image
-              src="/assets/image1.png"
-              alt="Vercel Logo"
-              className="dark"
-              width={100}
-              height={24}
-              priority
-            />
-        <div>
-          <h6>Scottland Island</h6>
-        </div>
-        <div>
+    <main className="flex min-w-screen min-h-screen items-center justify-center">
 
+      {/* Container */}
+      <div className="flex flex-col items-start justify-baseline min-w-568px min-h-946px py-5 px-0 bg-customWhite">
+
+        {/* Row */}
+        <div className="flex justify-start min-w-568px min-h-104px py-5 px-10">
+          <div>
+          <Image
+                src="/assets/image1.png"
+                alt="Scotland Island"
+                className="dark rounded-xl"
+                width={96}
+                height={96}
+                priority
+              />
+          </div>
+          <div className="flex flex-col items-start justify-center w-328px h-50px py-0 px-4">
+            <p className="text-mainHeader text-19 font-Gelion font-500 leading-24">Scotland Island</p>
+              <div className="flex justify-start items-center gap-1">
+                <Image
+                      src="/assets/Union.png"
+                      alt="The Charles Grand Brasserie and Bar"
+                      className="dark gap-1"
+                      width={10}
+                      height={10}
+                      priority
+                />
+                <p className="text-locationP text-17 font-Gelion font-400 leading-22">Sydney, Australia</p>
+              </div>
+          </div>
         </div>
 
 
+        {/* Row */}
+        <div className="flex justify-start w-568px h-104px py-5 px-10">
+          <div>
+          <Image
+                src="/assets/image1.png"
+                alt="Scotland Island"
+                className="dark rounded-xl"
+                width={96}
+                height={96}
+                priority
+              />
+          </div>
+          <div className="flex flex-col items-start justify-center w-328px h-50px py-0 px-4">
+            <p className="text-mainHeader text-19 font-Gelion font-500 leading-24">Scotland Island</p>
+              <div className="flex justify-start items-center gap-1">
+                <Image
+                      src="/assets/Union.png"
+                      alt="The Charles Grand Brasserie and Bar"
+                      className="dark gap-1"
+                      width={10}
+                      height={10}
+                      priority
+                />
+                <p className="text-locationP text-17 font-Gelion font-400 leading-22">Sydney, Australia</p>
+              </div>
+          </div>
         </div>
-        <p className="text-black min-w-568px">Test</p>
-        <p className="text-black min-w-568px">Test</p>
-        <p className="text-black min-w-568px">Test</p>
-        <p className="text-black min-w-568px">Test</p>
-        <p className="text-black min-w-568px">Test</p>
-        <p className="text-black min-w-568px">Test</p>
+
+        
+        
+        
       </div>
 
     </main>
