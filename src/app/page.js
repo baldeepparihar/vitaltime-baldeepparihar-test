@@ -1,8 +1,13 @@
+'use client';
+
 import Image from "next/image";
-import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+import { Draggable, Droppable } from 'react-beautiful-dnd';
                 
 
-export default function Home(provided) {
+export default function Home(provided, list) {
+  console.log("LIST: ", list)
+
+
 
   const box = [
     {
@@ -37,9 +42,7 @@ export default function Home(provided) {
     },
   ]
 
-  console.log('PROVIDED:', provided, box)
   return (
-
     <main className="flex min-w-screen min-h-screen items-center justify-center">
         
 
@@ -47,7 +50,10 @@ export default function Home(provided) {
       <ul ref={provided.innerRef} {...provided.droppableProps} className="flex flex-col items-start justify-start min-w-568px min-h-946px py-5 px-0 bg-customWhite">
 
         {/* Row */}
-        {box.map(({id, mainTitle}, index) => 
+        {box.map(({id, mainTitle, location}, index) => 
+          // <Droppable key={id} draggableId={id} index={index}>
+          // {(provided) => (
+          // <Draggable>
           <li key={id} className="flex justify-start min-w-568px min-h-104px py-5 px-10">
             <div>
             <Image
@@ -70,16 +76,18 @@ export default function Home(provided) {
                         height={10}
                         priority
                   />
-                  <p className="text-locationP text-17 font-Gelion font-400 leading-22">Sydney, Australia</p>
+                  <p className="text-locationP text-17 font-Gelion font-400 leading-22">{location}</p>
                 </div>
             </div>
             <div className="w-16 h-auto gap-1"></div>
           </li>
-        )}
-        
+          // </Draggable>
+          // )}
+          // </Droppable>
 
+        )}
       </ul>
-      {provided.placeholder}
+      {/* {provided.placeholder} */}
     
 
     </main>
