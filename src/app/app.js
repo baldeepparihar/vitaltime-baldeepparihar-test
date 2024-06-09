@@ -1,5 +1,20 @@
 import './fonts.css';
+import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+import Home from './page';
 
 export default function App({ Component, pageProps }) {
-    return <Component {...pageProps} />
+
+    function handleOnDragEnd(result) {}
+
+    return (
+    <DragDropContext onDragEnd={handleOnDragEnd}>
+        <Droppable droppableId='boxes'>
+        {(provided) => (
+            <Home ref={provided.innerRef} {...provided.droppableProps} provided={provided}/>
+            <Component {...pageProps} />
+        )}
+            
+        </Droppable>
+    </DragDropContext>
+    )
   }
